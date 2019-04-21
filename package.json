@@ -1,0 +1,27 @@
+{
+  "name": "discordrpgbot.client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "roller": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "nodemon": "^1.18.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedudesinc/DiscordRPGBot.Client.git"
+  },
+  "author": "The Dudes Inc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thedudesinc/DiscordRPGBot.Client/issues"
+  },
+  "homepage": "https://github.com/thedudesinc/DiscordRPGBot.Client#readme"
+}
