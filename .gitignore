@@ -1,3 +1,9 @@
+# Custom
+src/config/local.js
+
+# VS
+.vs
+
 # Logs
 logs
 *.log
