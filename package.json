@@ -7,6 +7,9 @@
     "discord.js": "^11.4.2",
     "roller": "^1.1.0"
   },
+  "engines": {
+    "node": "12.1.0"
+  },
   "devDependencies": {
     "eslint": "^5.16.0",
     "nodemon": "^1.18.11"
