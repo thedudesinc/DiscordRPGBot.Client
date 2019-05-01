@@ -16,4 +16,4 @@
     
 
 # After first time setup, run the following command in git bash to start the application (note you need to be in the root of the project): 
-`nodemon src/index.js`
+`nodemon index.js`
