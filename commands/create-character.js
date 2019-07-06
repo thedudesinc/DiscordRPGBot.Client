@@ -2,9 +2,9 @@ const repo = require('../repositories/discordRPGBot-repository');
 
 module.exports = {
 	name: 'create',
-	description: 'Create your character. Example: !create <character name> <character class> <character race>',
+	description: 'Create your character. Be sure to include commas. Example: !create <character name>, <character class>, <character race>',
 	args: true,
-	usage: '<character name> <character class> <character race>',
+	usage: '<character name>, <character class>, <character race>',
 	cooldown: 3,
 	aliases: ['c'],
 	execute(message, args) {

@@ -25,8 +25,9 @@ client.once('ready', () => {
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-	const args = message.content.slice(prefix.length).split(/ +/);
-	const commandName = args.shift().toLowerCase();
+	const argsSpaceSplit = message.content.slice(prefix.length).split(/ +/);
+	const commandName = argsSpaceSplit.shift().toLowerCase();
+	const args = argsSpaceSplit.join(' ').split(',').map(arg => arg.trim());
 
 	const command = client.commands.get(commandName)
 		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
