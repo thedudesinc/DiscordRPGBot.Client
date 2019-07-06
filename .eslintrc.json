@@ -8,13 +8,6 @@
 		"ecmaVersion": 2017
 	},
 	"rules": {
-		"brace-style": [
-			"error",
-			"stroustrup",
-			{
-				"allowSingleLine": true
-			}
-		],
 		"comma-dangle": [
 			"error",
 			"always-multiline"

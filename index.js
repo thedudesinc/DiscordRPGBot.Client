@@ -1,4 +1,6 @@
 const { prefix } = require('./config.json');
+const dotenv = require('dotenv');
+dotenv.config();
 const token = process.env.SECRET_DISCORD_TOKEN;
 const fs = require('fs');
 const Discord = require('discord.js');
@@ -32,7 +34,7 @@ client.on('message', message => {
 	if (!command) return;
 
 	if (command.args && !args.length) {
-		let reply = `You didn't provide any arguments, ${message.author}!`;
+		let reply = `You didn't provide the correct number of arguments, ${message.author}!`;
 
 		if (command.usage) {
 			reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
