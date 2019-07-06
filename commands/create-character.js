@@ -14,7 +14,7 @@ module.exports = {
 			})
 			.catch((error) => {
 				console.log(`=====================================================================================\n${error}`);
-				message.channel.send(`${message.author} We encountered an error creating your character. It has been consumed by the void.`);
+				message.channel.send(`${message.author} We encountered an error creating your character. It has been consumed by the void.\n${error.response.data}`);
 			});
 	},
 };
