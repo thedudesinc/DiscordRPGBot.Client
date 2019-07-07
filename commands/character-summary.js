@@ -1,8 +1,9 @@
 const repo = require('../repositories/discordRPGBot-repository');
+const { prefix } = require('./config.json');
 
 module.exports = {
 	name: 'summary',
-	description: 'Gives a summary of your character profile. Example: !summary',
+	description: `Gives a summary of your character profile. Example: ${prefix}summary`,
 	args: false,
 	usage: '',
 	cooldown: 10,
@@ -24,7 +25,7 @@ module.exports = {
 										---------------------------------------------------------------------`,
 						'color': 15245542,
 						'thumbnail': {
-							'url': response.data.classThumbnail,
+							'url': response.data.profileImageUrl ? response.data.profileImageUrl : response.data.classImageUrl,
 						},
 						'fields': [
 							{
@@ -55,8 +56,7 @@ module.exports = {
 				}
 			})
 			.catch((error) => {
-				console.log(`=====================================================================================\n${error}`);
-				message.channel.send(`${message.author} We encountered an error creating your character. It has been consumed by the void.`);
+				message.channel.send(`${message.author} We encountered an error retrieving your character. What have you done?!\n${error.response.data}`);
 			});
 	},
 };

@@ -10,9 +10,12 @@ const agent = new https.Agent({
 
 module.exports = {
 	getPlayerCharacter(discordId) {
-		return axios.get(`${apiUrl}playercharacter/${encodeURI(discordId)}`, { httpsAgent: agent });
+		return axios.get(`${apiUrl}PlayerCharacter/${encodeURI(discordId)}`, { httpsAgent: agent });
 	},
 	createPlayerCharacter(discordId, name, characterClass, race) {
-		return axios.post(`${apiUrl}playercharacter`, { discordId, name, class: characterClass, race }, { httpsAgent: agent });
+		return axios.post(`${apiUrl}PlayerCharacter`, { discordId, name, class: characterClass, race }, { httpsAgent: agent });
+	},
+	listPlayerCharacters(discordId) {
+		return axios.get(`${apiUrl}PlayerCharacter/GetAllByDiscordId/${encodeURI(discordId)}`, { httpsAgent: agent });
 	},
 };
