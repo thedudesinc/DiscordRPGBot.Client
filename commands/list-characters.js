@@ -2,7 +2,7 @@ const repo = require('../repositories/discordRPGBot-repository');
 const { prefix } = require('../config.json');
 
 module.exports = {
-	name: 'create',
+	name: 'list-characters',
 	description: `List your created characters. Example: ${prefix}list-characters`,
 	args: false,
 	usage: '',
@@ -14,7 +14,7 @@ module.exports = {
 				let descriptionText = '';
 
 				response.data.forEach((pc, index) => {
-					descriptionText += `**${index} - ** ${pc.name}, Level ${pc.currentLevel} ${pc.race} ${pc.class}\n\n`;
+					descriptionText += `**${index + 1} - ** ${pc.name}, Level ${pc.currentLevel} ${pc.race} ${pc.class}\n\n`;
 				});
 
 				const embed = {

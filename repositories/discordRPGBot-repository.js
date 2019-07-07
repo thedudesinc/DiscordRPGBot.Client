@@ -18,4 +18,7 @@ module.exports = {
 	listPlayerCharacters(discordId) {
 		return axios.get(`${apiUrl}PlayerCharacter/GetAllByDiscordId/${encodeURI(discordId)}`, { httpsAgent: agent });
 	},
+	setActiveCharacter(discordId, orderId) {
+		return axios.get(`${apiUrl}PlayerCharacter/SetActiveCharacterByOrderedName/${encodeURI(discordId)}/${encodeURI(orderId)}`, { httpsAgent: agent });
+	},
 };
