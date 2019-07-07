@@ -1,5 +1,5 @@
 const repo = require('../repositories/discordRPGBot-repository');
-const { prefix } = require('./config.json');
+const { prefix } = require('../config.json');
 
 module.exports = {
 	name: 'create',
