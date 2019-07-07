@@ -1,17 +1,21 @@
 const axios = require('axios');
 const https = require('https');
+const dotenv = require('dotenv');
+dotenv.config();
 const apiUrl = process.env.API_URL;
-const apiKey = process.env.API_KEY;
 
-const agent = new https.Agent({  
-    rejectUnauthorized: false
+const agent = new https.Agent({
+	rejectUnauthorized: false,
 });
 
 module.exports = {
-    getPlayerCharacter(discordId) {
-        return axios.get(`${apiUrl}playercharacter/${encodeURI(discordId)}`, { headers: { "X-API-KEY": apiKey }, httpsAgent: agent });
-    },
-    createPlayerCharacter(discordId, characterName) {
-        return axios.post(`${apiUrl}playercharacter`, { discordId, characterName }, { headers: { "X-API-KEY": apiKey }, httpsAgent: agent });
-    }
-}
+	getPlayerCharacter(discordId) {
+		return axios.get(`${apiUrl}PlayerCharacter/${encodeURI(discordId)}`, { httpsAgent: agent });
+	},
+	createPlayerCharacter(discordId, name, characterClass, race) {
+		return axios.post(`${apiUrl}PlayerCharacter`, { discordId, name, class: characterClass, race }, { httpsAgent: agent });
+	},
+	listPlayerCharacters(discordId) {
+		return axios.get(`${apiUrl}PlayerCharacter/GetAllByDiscordId/${encodeURI(discordId)}`, { httpsAgent: agent });
+	},
+};

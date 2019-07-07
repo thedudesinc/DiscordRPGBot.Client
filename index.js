@@ -1,4 +1,6 @@
 const { prefix } = require('./config.json');
+const dotenv = require('dotenv');
+dotenv.config();
 const token = process.env.SECRET_DISCORD_TOKEN;
 const fs = require('fs');
 const Discord = require('discord.js');
@@ -23,8 +25,9 @@ client.once('ready', () => {
 client.on('message', message => {
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-	const args = message.content.slice(prefix.length).split(/ +/);
-	const commandName = args.shift().toLowerCase();
+	const argsSpaceSplit = message.content.slice(prefix.length).split(/ +/);
+	const commandName = argsSpaceSplit.shift().toLowerCase();
+	const args = argsSpaceSplit.join(' ').split(',').map(arg => arg.trim());
 
 	const command = client.commands.get(commandName)
 		|| client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
@@ -32,7 +35,7 @@ client.on('message', message => {
 	if (!command) return;
 
 	if (command.args && !args.length) {
-		let reply = `You didn't provide any arguments, ${message.author}!`;
+		let reply = `You didn't provide the correct number of arguments, ${message.author}!`;
 
 		if (command.usage) {
 			reply += `\nThe proper usage would be: \`${prefix}${command.name} ${command.usage}\``;
