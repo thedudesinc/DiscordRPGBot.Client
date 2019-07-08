@@ -7,7 +7,7 @@ module.exports = {
 	args: true,
 	usage: '<number of the character to set as active>',
 	cooldown: 3,
-	aliases: ['lc'],
+	aliases: ['sac'],
 	execute(message, args) {
 		repo.setActiveCharacter(message.author.id, args[0])
 			.then((response) => {

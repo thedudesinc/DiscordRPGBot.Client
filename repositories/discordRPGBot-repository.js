@@ -15,6 +15,9 @@ module.exports = {
 	createPlayerCharacter(discordId, name, characterClass, race) {
 		return axios.post(`${apiUrl}PlayerCharacter`, { discordId, name, class: characterClass, race }, { httpsAgent: agent });
 	},
+	setCharacterImage(discordId, imageUrl) {
+		return axios.post(`${apiUrl}PlayerCharacter/SetCharacterImage`, { discordId, imageUrl }, { httpsAgent: agent });
+	},
 	listPlayerCharacters(discordId) {
 		return axios.get(`${apiUrl}PlayerCharacter/GetAllByDiscordId/${encodeURI(discordId)}`, { httpsAgent: agent });
 	},
