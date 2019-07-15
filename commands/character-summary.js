@@ -3,7 +3,7 @@ const { prefix } = require('../config.json');
 
 module.exports = {
 	name: 'summary',
-	description: `Gives a summary of your character profile. Example: ${prefix}summary`,
+	description: `Gives a summary of your character profile. Example: \`${prefix}summary\``,
 	args: false,
 	usage: '',
 	cooldown: 10,
@@ -56,7 +56,7 @@ module.exports = {
 				}
 			})
 			.catch((error) => {
-				message.channel.send(`${message.author} We encountered an error retrieving your character. What have you done?!\n${error.response.data}`);
+				message.channel.send(`${message.author} We encountered an error retrieving your character.\nIf the problem persists, contact me at thedudesincorporated@gmail.com.\n${error.response.data}`);
 			});
 	},
 };

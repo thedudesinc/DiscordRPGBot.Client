@@ -3,7 +3,7 @@ const { prefix } = require('../config.json');
 
 module.exports = {
 	name: 'create',
-	description: `Create your character. Be sure to include commas. Example: ${prefix}create <character name>, <character class>, <character race>`,
+	description: `Create your character. Be sure to include commas. Example: \`${prefix}create <character name>, <character class>, <character race>\``,
 	args: true,
 	usage: '<character name>, <character class>, <character race>',
 	cooldown: 3,
@@ -14,7 +14,7 @@ module.exports = {
 				message.channel.send(`${message.author}\nYour character has been created! Use \`!s\` or \`!summary\` to view a summary of your new character.`);
 			})
 			.catch((error) => {
-				message.channel.send(`${message.author} We encountered an error creating your character. It has been consumed by the void.\n${error.response.data}`);
+				message.channel.send(`${message.author} We encountered an error creating your character. Try again.\nIf the problem persists, contact me at thedudesincorporated@gmail.com.\n${error.response.data}`);
 			});
 	},
 };

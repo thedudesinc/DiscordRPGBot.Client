@@ -14,7 +14,7 @@ module.exports = {
 				message.channel.send(`${message.author}\nYour character's profile image has been set! Use \`!s\` or \`!summary\` to take a look.`);
 			})
 			.catch((error) => {
-				message.channel.send(`${message.author} We encountered an error setting your character's image. Please try again!\n${error.response.data}`);
+				message.channel.send(`${message.author} We encountered an error setting your character's image. Please try again!\nIf the problem persists, contact me at thedudesincorporated@gmail.com.\n${error.response.data}`);
 			});
 	},
 };

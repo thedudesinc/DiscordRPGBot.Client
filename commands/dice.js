@@ -3,7 +3,7 @@ const { prefix } = require('../config.json');
 
 module.exports = {
 	name: 'dice',
-	description: `Rolls a dice using the standard ndx format. Example: ${prefix}dice 1d10`,
+	description: `Rolls a dice using the standard ndx format. Example: \`${prefix}dice 1d10\``,
 	args: true,
 	usage: '1d10',
 	cooldown: 10,

@@ -3,7 +3,7 @@ const { prefix } = require('../config.json');
 
 module.exports = {
 	name: 'set-active-character',
-	description: `Sets which of your characters is active. Example: ${prefix}set-active-character 1\nTo get the character number, use the ${prefix}list-characters command.`,
+	description: `Sets which of your characters is active. Example: \`${prefix}set-active-character 1\`\nTo get the character number, use \`${prefix}list-characters.\``,
 	args: true,
 	usage: '<number of the character to set as active>',
 	cooldown: 3,
@@ -19,7 +19,7 @@ module.exports = {
 				message.channel.send({ embed });
 			})
 			.catch((error) => {
-				message.channel.send(`${message.author} We encountered an error retrieving your characters. WHAT HAVE YOU DONE?!\n${error.response.data}`);
+				message.channel.send(`${message.author} We encountered an error retrieving your characters.\nIf the problem persists, contact me at thedudesincorporated@gmail.com.\n${error.response.data}`);
 			});
 	},
 };
